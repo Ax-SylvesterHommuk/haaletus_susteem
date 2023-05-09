@@ -1,0 +1,24 @@
+CREATE TABLE HAALETUS (
+  id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  eesnimi VARCHAR(50) NOT NULL,
+  perenimi VARCHAR(50) NOT NULL,
+  haaletusaeg DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  otsus ENUM('poolt', 'vastu') NOT NULL
+);
+
+CREATE TABLE LOGI (
+  id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  haaletaja_id INT(11) NOT NULL,
+  muudetud_veerg VARCHAR(50) NOT NULL,
+  vana_vaartus VARCHAR(255) NOT NULL,
+  uus_vaartus VARCHAR(255) NOT NULL,
+  muutmise_aeg DATETIME NOT NULL
+);
+
+CREATE TABLE TULEMUSED (
+  id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  haaltenumber INT(11) NOT NULL,
+  h_alguse_aeg DATETIME NOT NULL,
+  poolt_haalte_arv INT(11) NOT NULL,
+  vastu_haalte_arv INT(11) NOT NULL
+);
