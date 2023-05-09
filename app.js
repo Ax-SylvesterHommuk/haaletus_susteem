@@ -13,7 +13,7 @@ const pool = mysql.createPool({
 
 
 const app = express();
-const VOTE_TIME_LIMIT = 0.25 * 60 * 1000; // 5 minutes in milliseconds (x * 60 * 1000)
+const VOTE_TIME_LIMIT = 5 * 60 * 1000; // 5 minutes in milliseconds (x * 60 * 1000)
 const START_DATETIME = new Date();
 
 
