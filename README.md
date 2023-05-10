@@ -1,4 +1,5 @@
 # Hääletussüsteem
+![Image](https://media.discordapp.net/attachments/1004833211727224857/1105760654511583292/image.png?width=1440&height=617)
 See on lihtne hääletussüsteem, mis võimaldab kasutajatel hääletada poolt või vastu ning näitab tulemusi reaalajas.
 
 # Kuidas see toimib?
