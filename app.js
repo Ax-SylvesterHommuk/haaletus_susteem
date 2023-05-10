@@ -13,7 +13,7 @@ const pool = mysql.createPool({
 
 
 const app = express();
-const VOTE_TIME_LIMIT = 5 * 60 * 1000; // 5 minutes in milliseconds (x * 60 * 1000)
+const VOTE_TIME_LIMIT = 0.25 * 60 * 1000; // 5 minutes in milliseconds (x * 60 * 1000)
 const START_DATETIME = new Date();
 
 
@@ -30,7 +30,7 @@ setIntervalAsync(async () => {
     try {
       const poolt_haalte_arv = (await pool.promise().query('SELECT COUNT(*) as count FROM HAALETUS WHERE otsus = ?', ['poolt']))[0][0].count;
       const vastu_haalte_arv = (await pool.promise().query('SELECT COUNT(*) as count FROM HAALETUS WHERE otsus = ?', ['vastu']))[0][0].count;
-      const haaltenumber = (await pool.promise().query('SELECT COUNT(*) as count FROM TULEMUSED'))[0][0].count + 1;
+      const haaltenumber = poolt_haalte_arv + vastu_haalte_arv;
       const tulemus = {
         haaltenumber: haaltenumber,
         h_alguse_aeg: START_DATETIME,
