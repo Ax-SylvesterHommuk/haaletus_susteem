@@ -95,7 +95,7 @@
         return response.json();
       })
       .then(data => {
-        totalVotes.textContent = data.total;
+        totalVotes.textContent = data.total + "/11";
         forVotes.textContent = data.forCount;
         againstVotes.textContent = data.againstCount;
         const remainingTime = Math.max(0, data.timeLeft);
